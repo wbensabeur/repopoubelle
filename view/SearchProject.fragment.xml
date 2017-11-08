@@ -1,0 +1,93 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" id="SearchProjectFragment">
+	<VBox  id="searchPrjList">
+
+	<VBox alignItems="Start" justifyContent="Start" id="radioVBox" >
+	<Label text="{i18n>filterBy} :" class="sapUiSmallMargin"/>
+					<RadioButton id="RB1" text="{i18n>projectFav}" select="onSelectFilter" selected="true"/>
+					<RadioButton id="RB2" text="{i18n>allProject}" select="onSelectFilter"/>
+			</VBox>
+	<Toolbar id="toolbar" visible="false">
+		<SearchField liveChange="onSearch" id="searchField" width="100%"/>
+	</Toolbar>
+		<VBox id="searchList1" visible="true">
+			<Label class="sapUiTinyMarginBottom" text="{i18n>lastPrjTitle}" design="Bold"/>
+			<List items="{path: '/ProjectSet'}" id="serachPrjList" growing="true" mode="SingleSelectMaster" selectionChange="OnProjectSelectedLast">
+				<CustomListItem>
+					<HBox justifyContent="SpaceBetween">
+						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+							<Text  text="{ProjectDescription}\n
+						{BusinessUnit} {BusinessUnitDesc} {ProjectId}"/>
+							<!--<Label text="{ProjectDescription}"/>-->
+							<!--<Label text="{BusinessUnit}     {ProjectId}"/>-->
+						</VBox>
+						<HBox alignContent="End"  class="sapUiSmallMarginTopBottom sapUiTinyMarginEnd">
+							<Text wrapping="false" text="{ResponsiblePMName}" /></HBox>
+						<core:Icon class="sapUiTinyMarginEnd sapUiSmallMarginTop" src="{path:'Favorite',formatter:'.utility.favIcon'}" press="OnFavoriteChange"/>
+					</HBox>
+					<customData>
+						<core:CustomData key="ProjectBinding" value=""/>
+						<core:CustomData key="UpdateObject" value=""/>
+					</customData>
+				</CustomListItem>
+			</List>
+		</VBox>
+		<VBox id="searchList2" visible="true">
+			<Label class="sapUiTinyMarginBottom" text="{i18n>favPrjTitle}" design="Bold"/>
+			<List items="{path: '/ProjectSet'}" id="favPrjList" selectionChange="OnProjectSelectedFav" mode="SingleSelectMaster">
+				<CustomListItem>
+						<HBox justifyContent="SpaceBetween">
+						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+							<Text wrapping="true"  text="{ProjectDescription}\n
+						{BusinessUnit} {BusinessUnitDesc} {ProjectId}"/>
+							<!--<Label text="{ProjectDescription}"/>-->
+							<!--<Label text="{BusinessUnit}     {ProjectId}"/>-->
+						</VBox>
+						<HBox alignContent="End"  class="sapUiSmallMarginTopBottom sapUiTinyMarginEnd">
+							<Text wrapping="false" text="{ResponsiblePMName}" /></HBox>
+						<core:Icon class="sapUiTinyMarginEnd sapUiSmallMarginTop" src="{path:'Favorite',formatter:'.utility.favIcon'}" press="OnFavoriteChange"/>
+					</HBox>
+					<customData>
+						<core:CustomData key="ProjectBinding" value=""/>
+						<core:CustomData key="UpdateObject" value=""/>
+					</customData>
+				</CustomListItem>
+			</List>
+		</VBox>
+			<VBox id="searchList3" visible="false">
+			<Label class="sapUiTinyMarginBottom" text="{i18n>allPrjTitle}" design="Bold"/>
+			<List items="{path: '/ProjectSet'}" id="allPrjList" growing="true" mode="SingleSelectMaster" selectionChange="OnProjectSelected">
+				<CustomListItem>
+					<HBox justifyContent="SpaceBetween">
+						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+							<Text wrapping="true" text="{ProjectDescription}\n
+						{BusinessUnit} {BusinessUnitDesc} {ProjectId}"/>
+							<!--<Label text="{ProjectDescription}"/>-->
+							<!--<Label text="{BusinessUnit}     {ProjectId}"/>-->
+						</VBox>
+						<HBox alignContent="End"  class="sapUiSmallMarginTopBottom sapUiTinyMarginEnd">
+							<Text wrapping="false" text="{ResponsiblePMName}" /></HBox>
+						<core:Icon class="sapUiTinyMarginEnd sapUiSmallMarginTop" src="{path:'Favorite',formatter:'.utility.favIcon'}" press="OnFavoriteChange"/>
+					</HBox>
+					<customData>
+						<core:CustomData key="ProjectBinding" value=""/>
+						<core:CustomData key="UpdateObject" value=""/>
+					</customData>
+				</CustomListItem>
+			</List>
+		</VBox>
+	</VBox>
+	<VBox id="searchProjectCriteriaFragment" visible="false">
+					<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SearchProjectCriteria' type='XML'/>
+				</VBox>
+	<!--
+		<Bar class="vinciFooterBar" id="searchPrjListFooter">
+				<contentRight>
+					<Button id="ProjectCancelButton" text="{i18n>cancel}" type="Transparent" visible="{footer>/ProjectScreen}" press="onPressProjectCancel"/>
+					<Button id="ProjectSelectButton" text="{i18n>select}" type="Emphasized" visible="{footer>/ProjectScreen}" press="onPressProjectSelect">
+						<customData>
+							<core:CustomData key="context" value="" />
+						</customData>
+					</Button>
+				</contentRight>
+			</Bar>-->
+</core:FragmentDefinition>

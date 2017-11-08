@@ -1,0 +1,90 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
+	<!--<Panel width="auto" class="sapUiResponsiveMargin">-->
+		<Bar design="SubHeader" class="VinciBar">
+			<contentMiddle>
+				<Button icon="sap-icon://arrow-left" type="Transparent" press="onPastPeriodNavPress" class="circleIcon" visible="false"/>
+				<Label text="{parts:['calendar>/StartDate'],formatter:'.utility.periodFormat'}" textAlign="Center"
+					class="monthLabelPadding vinciWeekNavigation"/>
+				<Button icon="sap-icon://arrow-right" type="Transparent" press="onFuturePeriodNavPress" class="circleIcon" visible="false"/>
+			</contentMiddle>
+		</Bar>
+		<Table id="table" columns="{ path: 'calendar>/data' }" noDataText="{worklistView>/tableNoDataText}"
+			busyIndicatorDelay="{worklistView>/tableBusyDelay}" updateFinished="onUpdateFinished" showSeparators="None" inset="false"
+			class="employeeListTable">
+			<columns>
+				<Column width="{calendar>width}" hAlign="Center">
+					<VBox class="tableColumn" alignItems="Center" justifyContent="Center" height="auto">
+						<Label text="{calendar>ColumnTxt1}" visible="{path:'calendar>ComboVisible',formatter:'.utility.booleanNot'}" design="Bold" class="textColorBlue" />
+						<Label text=" {calendar>ColumnTxt2}" visible="{path:'calendar>ComboVisible',formatter:'.utility.booleanNot'}" design="Bold" class="textColorBlue" />
+						<customData>
+							<core:CustomData key="background" value="{path:'calendar>Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+						</customData>
+					</VBox>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="columnList" vAlign="Middle" class="sapUiTableTr">
+					<cells>
+						<ToggleButton text="{parts:['WeekDate1Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate1Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate1Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate1Date}"/>
+							</customData>
+						</ToggleButton>
+						<ToggleButton text="{parts:['WeekDate2Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate2Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate2Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate2Date}"/>
+							</customData>
+						</ToggleButton>
+						<ToggleButton text="{parts:['WeekDate3Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate3Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate3Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate3Date}"/>
+							</customData>
+						</ToggleButton>
+						<ToggleButton text="{parts:['WeekDate4Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate4Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate4Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate4Date}"/>
+							</customData>
+						</ToggleButton>
+						<ToggleButton text="{parts:['WeekDate5Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate5Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate5Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate5Date}"/>
+							</customData>
+						</ToggleButton>
+						<ToggleButton text="{path:'WeekDate6Hours', formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate6Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate6Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate6Date}"/>
+							</customData>
+						</ToggleButton>
+						<ToggleButton text="{path:'WeekDate7Hours', formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+							<customData>
+								<core:CustomData key="status" value="{path:'WeekDate7Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+								<core:CustomData key="background" value="{path:'WeekDate7Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+								<core:CustomData key="employee" value="{EmployeeId}"/>
+								<core:CustomData key="selectedDate" value="{WeekDate7Date}"/>
+							</customData>
+						</ToggleButton>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	<!--</Panel>-->
+</core:FragmentDefinition>

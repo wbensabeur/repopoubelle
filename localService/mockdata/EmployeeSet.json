@@ -1,0 +1,13 @@
+[{
+	"EmployeeId": "i071776",
+	"BusinessUnit": "BU1",
+	"Company": "SAP",
+	"UserId": "EMPI071776",
+	"FullName": "Alok Pandey",
+	"UserType": "A",
+	"StartDate": "/Date(1499279400000)/",
+	"EndDate": "/Date(1499279400000)/",
+	"IsTimeEntryEnable": true,
+	"ManagerId": "I077666",
+	"AnalyticalUnit": "ANLUNIT"
+}]

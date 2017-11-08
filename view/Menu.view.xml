@@ -1,0 +1,66 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.Menu" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page class="menuBackgroundColor  VinciPage">
+		<customHeader class="menuBackgroundColor">
+			<Toolbar>
+				<Title text="{i18n>menuTitle}" level="H2" class="sapUiLargeMarginBegin"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<List>
+				<CustomListItem class="menuBackgroundColor" press="onPressTimeCreate" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://history" type="Transparent" press="onPressTimeCreate" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize menuIconColor"/>
+							<Label text="{i18n>timeCreate}" class="sapUiSmallMarginBegin sapUiMediumMarginTopBottom textColorBlue"/>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<CustomListItem class="menuBackgroundColor" press="onPressAllowanceCreate" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://map" type="Transparent" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize menuIconColor"/>
+							<Label text="{i18n>dailyAllowance}" class="sapUiSmallMarginBegin sapUiMediumMarginTopBottom textColorBlue"/>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<CustomListItem visible="{settings>/kmState}" class="menuBackgroundColor" press="onPressKilometerCreate" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://taxi" type="Transparent" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize menuIconColor" />
+							<Label text="{i18n>kmCreate}" class="sapUiSmallMarginBegin sapUiMediumMarginTopBottom textColorBlue"/>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<CustomListItem visible="{settings>/absState}" class="menuBackgroundColor" press="onPressAbsenceCreate" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://bed" type="Transparent" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize menuIconColor"/>
+							<Label text="{i18n>absCreate}" class="sapUiSmallMarginBegin sapUiMediumMarginTopBottom textColorBlue"/>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<CustomListItem visible="{settings>/equipState}" class="menuBackgroundColor" press="onPressEquipEntryCreate" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://shipping-status" type="Transparent" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize menuIconColor"/>
+							<Label text="{i18n>equipCreate}" class="sapUiSmallMarginBegin sapUiMediumMarginTopBottom textColorBlue"/>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<CustomListItem class="menuBackgroundColor" press="onPressWeeklyReport" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://manager-insight" type="Transparent" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize menuIconColor"/>
+							<Label text="{i18n>menuWeeklyReport}" class="sapUiSmallMarginBegin sapUiMediumMarginTopBottom textColorBlue"/>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+		</content>
+		<footer>
+			<Bar></Bar>
+		</footer>
+	</Page>
+</mvc:View>

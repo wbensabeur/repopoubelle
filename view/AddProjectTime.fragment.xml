@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:customTag="com.vinci.timesheet.employee.customlib">
+	<VBox width="100%">
+		<FlexBox class="AddHoursDivider" width="100%"/>
+		<!--	<FlexBox alignContent="Start" justifyContent="End">
+			<Button class="DeleteButton" icon="sap-icon://delete" type="Transparent" press="OnTimeDelete"/>
+		</FlexBox>-->
+		<VBox alignItems="Start" justifyContent="Start" class="sapUiTinyMarginBottom" width="100%">
+			<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SelectProject' type='XML'/>
+			<HBox width="100%" alignItems="Start" justifyContent="Start" class="customWidthIE">
+				<RadioButtonGroup columns="2" width="100%" id="hoursSelection" class="sapUiTinyMarginBottom customWidthButton" select="OnchangeTimeSelection" selectedIndex="0">
+					<buttons>
+						<RadioButton text="{i18n>allDay}"  selected="{FullDay}" />
+						<RadioButton text="{i18n>specificTime}" selected="{path:'FullDay', formatter:'.utility.isFullDay'}" />
+					</buttons>
+				</RadioButtonGroup>
+			</HBox>
+			<VBox class="sapUiSmallMarginBottom">
+				<Select selectedKey="{EntryTypeCatId}"  items="{path:'/ValueHelpSet', filters: [{ path: 'ApplicationName', operator: 'EQ', value1: 'EMPLOYEE'},{ path: 'HelpType', operator: 'EQ', value1: 'DH'}]}" id="hoursType"  >
+					<core:Item key="{FieldValue}" text="{FieldDescription}" />
+				</Select>
+			</VBox>
+		</VBox>
+		<VBox class="sapUiSmallMarginBottom" visible="{path:'FullDay', formatter:'.utility.isFullDay'}" id="addHours">
+			<Label text="{i18n>selectHours}" design="Bold" class="sapUiSmallMargin"/>
+			<HBox alignItems="Start" justifyContent="Start">
+				<Label text="{i18n>duration} :" design="Bold" class="sapUiSmallMargin" visible="{path:'timeCreateView>/duration',formatter:'.utility.booleanNot'}"/>
+				<customTag:StepInputCustom  class="customStep" value="{Hours}"  displayValuePrecision="2"  visible="{path:'timeCreateView>/duration',formatter:'.utility.booleanNot'}" width="9rem" min="0.00" max="24.00" step="0.5" change="OnChangeHours"/>
+			</HBox>
+			<HBox alignItems="Start" justifyContent="Start">
+				<Label text="{i18n>From}" width="6rem" design="Bold" class="sapUiSmallMargin" visible="{timeCreateView>/duration}"/>
+				<TimePicker visible="{timeCreateView>/duration}" valueFormat="HH:mm" displayFormat="HH:mm"
+					placeholder="Enter Start Time" width="9rem" change="OnChangeStartTime" value="{StartTime}"/>
+			</HBox>
+			<HBox alignItems="Start" justifyContent="Start">
+				<Label text="{i18n>To}" width="6rem" design="Bold" class="sapUiSmallMargin" visible="{timeCreateView>/duration}"/>
+				<TimePicker visible="{timeCreateView>/duration}" enabled="true" valueFormat="HH:mm"
+					displayFormat="HH:mm" width="9rem" placeholder="Enter End Time" value="{EndTime}" change="OnChangeEndTime"/>
+			</HBox>
+		</VBox>
+		<customData>
+			<core:CustomData key="hrs" value="0"/>
+		</customData>
+	</VBox>
+</core:FragmentDefinition>

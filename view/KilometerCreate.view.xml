@@ -1,0 +1,78 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.KilometerCreate" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>addKilometer}" navButtonPress="onPressNavBack" showNavButton="true" busy="{kmCreateView>/busy}"
+		class="nav-color VinciPage">
+		<content>
+			<VBox width="100%" alignItems="Start" justifyContent="Start" class="sapUiTinyMargin" id="createTime">
+				<VBox width="100%">
+					<Link text="{ProjectDescription}" class="sapUiSmallMarginTop ProjectLabel" visible="false"/>
+					<!--<Label visible="false"  text="{ProjectDescription}" >  </Label>-->
+					<Label visible="false" text="{ProjectId}"></Label>
+					<Link text="{ProjectName}" class="sapUiSmallMarginTop ProjectLabel" visible="false"/>
+				</VBox>
+				<VBox class="sapUiSmallMargin">
+					<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SelectProject' type='XML'/>
+				</VBox>
+				<VBox id="kmList" alignItems="Start" justifyContent="Start" width="100%">
+					<!--<items>-->
+					<!--<CustomListItem>-->
+					<VBox width="100%" alignItems="Start" justifyContent="Start">
+						<Label text="{i18n>firstTravel}" design="Bold" class="sapUiSmallMargin textUnderLine"/>
+						<HBox alignItems="Start" justifyContent="Start" width="100%">
+							<Label text="{i18n>FROM}" width="3rem" design="Bold" class="sapUiSmallMarginTop sapUiTinyMarginBegin"/>
+							<TimePicker valueFormat="HH:mm" width="7rem" displayFormat="HH:mm" placeholder="Enter Start Time" id="startTimeFirst"/>
+							<Label text="{i18n>TO}" design="Bold" width="3rem" class="sapUiSmallMarginTop sapUiTinyMarginBegin"/>
+							<TimePicker valueFormat="HH:mm" width="7rem" displayFormat="HH:mm" placeholder="Enter End Time" id="endTimeFirst"/>
+						</HBox>
+						<HBox alignItems="Start" justifyContent="Start" width="100%">
+							<Select id="kmTypeComboFirst" width="10rem"
+								items="{path:'/ValueHelpSet', filters: [{ path: 'ApplicationName', operator: 'EQ', value1: 'EMPLOYEE'},{ path: 'HelpType', operator: 'EQ', value1: 'KM'}]}"
+								class="sapUiSmallMargin">
+								<core:Item key="{FieldValue}" text="{FieldDescription}"/>
+							</Select>
+							<Input id="kmNumberFirst"  width="8rem"  value="" placeholder="{i18n>enterKM}" type="Number" class="sapUiSmallMarginTop sapUiSmallMarginBegin" maxLength="5"></Input>
+						</HBox>
+					</VBox>
+					<!--</CustomListItem>-->
+					<!--<CustomListItem>-->
+					<VBox width="100%" alignItems="Start" justifyContent="Start">
+						<Label text="{i18n>secondTravel}" design="Bold" class="sapUiSmallMargin textUnderLine"/>
+						<HBox alignItems="Start" justifyContent="Start" width="100%">
+							<Label text="{i18n>FROM}" width="3rem" design="Bold" class="sapUiSmallMarginTop sapUiTinyMarginBegin" />
+							<TimePicker valueFormat="HH:mm" width="7rem" displayFormat="HH:mm" placeholder="Enter Start Time" id="startTimeSecond"/>
+							<Label text="{i18n>TO}" design="Bold" width="3rem" class="sapUiSmallMarginTop sapUiTinyMarginBegin"/>
+							<TimePicker valueFormat="HH:mm" width="7rem" displayFormat="HH:mm" placeholder="Enter End Time" id="endTimeSecond"/>
+						</HBox>
+						<HBox alignItems="Start" justifyContent="Start" width="100%">
+							<Select id="kmTypeComboSecond" width="10rem"
+								items="{path:'/ValueHelpSet', filters: [{ path: 'ApplicationName', operator: 'EQ', value1: 'EMPLOYEE'},{ path: 'HelpType', operator: 'EQ', value1: 'KM'}]}"
+								class="sapUiSmallMargin">
+								<core:Item key="{FieldValue}" text="{FieldDescription}"/>
+							</Select>
+							<Input id="kmNumberSecond" width="8rem" value="" placeholder="{i18n>enterKM}" type="Number" class="sapUiSmallMarginTop sapUiSmallMarginBegin" maxLength="5"></Input>
+						</HBox>
+					</VBox>
+					<!--</CustomListItem>-->
+					<!--</items>-->
+				</VBox>
+			</VBox>
+			<VBox id="projectSearchFragment" visible="false">
+				<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SearchProject' type='XML'/>
+			</VBox>
+		</content>
+		<footer>
+			<Bar class="vinciFooterBar">
+				<contentRight>
+					<Button id="addTimeCancelButton" type="Reject" text="{i18n>tcCancel}" press="onPressCancel"></Button>
+					<Button id="addTimeSelectButton" type="Accept" text="{i18n>daRegister}" press="onPressSave"></Button>
+					<Button id="ProjectCancelButton" text="{i18n>tcCancel}" type="Reject" visible="false" press="onPressProjectCancel"/>
+					<Button id="ProjectSelectButton" text="{i18n>select}" type="Accept" visible="false" press="onPressProjectSelect">
+						<customData>
+							<core:CustomData key="context" value=""/>
+						</customData>
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

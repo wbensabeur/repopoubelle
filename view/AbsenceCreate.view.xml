@@ -1,0 +1,57 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.AbsenceCreate" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>absenceTitle}" navButtonPress="onPressNavBack" showNavButton="true" busy="{absCreateView>/busy}" class="VinciPage">
+		<content>
+			<u:CalendarDateInterval width="100%" select="handleCalendarSelect"/>
+			<VBox>
+				<Select forceSelection="false" selectedKey="{absCreateView>/categoryId}" change="onPressCategorySelect" width="90%"
+					class="sapUiSmallMarginBegin sapUiSmallMarginBottom sapUiSmallMarginEnd">
+					<items>
+						<core:Item key="categoryId1" text="Days"/>
+						<core:Item key="categoryId2" text="Half Day"/>
+						<core:Item key="categoryId3" text="Hours"/>
+					</items>
+				</Select>
+				<HBox class="sapUiSmallMarginBegin sapUiSmallMarginBottom">
+					<Text text="{i18n>firstDay}" class="sapUiSmallMarginTop"/>
+					<DatePicker displayFormat="long" dateValue="{absCreateView>/firstDay}" maxDate="{absCreateView>/lastDay}" change="handleChange"
+						class="sapUiSmallMarginBegin"/>
+				</HBox>
+				<HBox class="sapUiSmallMarginBegin sapUiSmallMarginBottom">
+					<Text text="{i18n>lastDay}" class="sapUiSmallMarginTop"/>
+					<DatePicker displayFormat="long" dateValue="{absCreateView>/lastDay}" minDate="{absCreateView>/firstDay}" change="handleChange"
+						class="sapUiSmallMarginBegin"/>
+				</HBox>
+				<Input type="Text" value="{kmCreateView>/numOfKm}" placeholder="{i18n>numOfHours}" width="90%"
+					class="sapUiSmallMarginBegin sapUiSmallMarginBottom" visible="{absCreateView>/bHours}"></Input>
+				<HBox visible="{absCreateView>/bHalfDay}">
+					<RadioButton groupName="GroupA" text="{i18n>fullDay}" selected="true"/>
+					<RadioButton groupName="GroupA" text="{i18n>morning}"/>
+					<RadioButton groupName="GroupA" text="{i18n>afternoon}"/>
+				</HBox>
+				<TextArea value="{absCreateView>/comments}" rows="4" width="90%" placeholder="{i18n>comments}" class="sapUiSmallMarginBegin"/>
+			</VBox>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button type="Default" text="{i18n>resetBtn}" press="onPressSave">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+					<Button type="Accept" text="{i18n>tcSave}" press="onPressSave">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+					<Button type="Reject" text="{i18n>tcCancel}" press="onPressCancel">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

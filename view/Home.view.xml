@@ -1,0 +1,118 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.Home" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	>
+	<App id="idFullWidthAppControl">
+		<!--<pages>-->
+		<!--	<Page >-->
+		<!--		<customHeader>-->
+		<!--			<Toolbar>-->
+		<!--				<ToolbarSpacer/>-->
+		<!--				<Title text="{i18n>homeTile}" level="H2"/>-->
+		<!--				<ToolbarSpacer/>-->
+		<!--				<Button icon="sap-icon://menu2" press="onPressNavigationMenu" ariaLabelledBy="editButtonLabel"/>-->
+		<!--			</Toolbar>-->
+		<!--		</customHeader>-->
+				<!--<content>-->
+					<l:Splitter id="mainSplitter" width="100%">
+						<l:contentAreas>
+							<mvc:XMLView viewName="com.vinci.timesheet.employee.view.Timesheet" height="100%" id="vinTimesheetId">
+								<mvc:layoutData>
+									<l:SplitterLayoutData  />
+								</mvc:layoutData>
+							</mvc:XMLView>
+						<!--	<mvc:XMLView viewName="com.vinci.timesheet.employee.view.Menu" height="100%" >
+								<mvc:layoutData>
+									<l:SplitterLayoutData size="0%" id="vinMenuId"/>
+								</mvc:layoutData>
+							</mvc:XMLView>-->
+						</l:contentAreas>
+					</l:Splitter>
+					<!--<u:CalendarDateInterval id="calendar" width="100%" select="handleCalendarSelect"/>-->
+					<!--<List headerText="{i18n>timesheetDetails}" mode="SingleSelectMaster" selectionChange="onPressDetails">-->
+					<!--	<CustomListItem>-->
+					<!--		<HBox>-->
+					<!--			<HBox width="100%">-->
+					<!--				<Button icon="sap-icon://history" type="Transparent" press="onPressTotalTime"-->
+					<!--					class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+					<!--					<Label text="{i18n>totalTime}"/>-->
+					<!--					<Label text="8 Hours"/>-->
+					<!--				</VBox>-->
+					<!--			</HBox>-->
+					<!--			<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressTotalTime"-->
+					<!--				class="sapUiTinyMarginEnd sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--		</HBox>-->
+					<!--	</CustomListItem>-->
+					<!--	<CustomListItem>-->
+					<!--		<HBox>-->
+					<!--			<HBox width="100%">-->
+					<!--				<Button icon="sap-icon://map" type="Transparent" press="onPressTotalAllowance"-->
+					<!--					class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+					<!--					<Label text="{i18n>totalAllowance}"/>-->
+					<!--					<Label text="8 IPD"/>-->
+					<!--				</VBox>-->
+					<!--			</HBox>-->
+					<!--			<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressTotalTime"-->
+					<!--				class="sapUiTinyMarginEnd sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--		</HBox>-->
+					<!--	</CustomListItem>-->
+					<!--	<CustomListItem visible="{settings>/kmState}">-->
+					<!--		<HBox>-->
+					<!--			<HBox width="100%">-->
+					<!--				<Button icon="sap-icon://taxi" type="Transparent" press="onPressTotalilometers"-->
+					<!--					class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+					<!--					<Label text="{i18n>totalKM}"/>-->
+					<!--					<Label text="50 KM"/>-->
+					<!--				</VBox>-->
+					<!--			</HBox>-->
+					<!--			<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressTotalTime"-->
+					<!--				class="sapUiTinyMarginEnd sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--		</HBox>-->
+					<!--	</CustomListItem>-->
+					<!--	<CustomListItem visible="{settings>/absState}">-->
+					<!--		<HBox>-->
+					<!--			<HBox width="100%">-->
+					<!--				<Button icon="sap-icon://bed" type="Transparent" press="onPressTotalAbsence"-->
+					<!--					class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+					<!--					<Label text="{i18n>totalAbsence}"/>-->
+					<!--					<Label text="8 Hours"/>-->
+					<!--				</VBox>-->
+					<!--			</HBox>-->
+					<!--			<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressTotalTime"-->
+					<!--				class="sapUiTinyMarginEnd sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--		</HBox>-->
+					<!--	</CustomListItem>-->
+					<!--	<CustomListItem visible="{settings>/equipState}">-->
+					<!--		<HBox>-->
+					<!--			<HBox width="100%">-->
+					<!--				<Button icon="sap-icon://shipping-status" type="Transparent" press="onPressEquipment"-->
+					<!--					class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+					<!--					<Label text="{i18n>equipment}"/>-->
+					<!--					<Label text="8 Hours"/>-->
+					<!--				</VBox>-->
+					<!--			</HBox>-->
+					<!--			<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressTotalTime"-->
+					<!--				class="sapUiTinyMarginEnd sapUiSmallMarginTopBottom homeBtnSize"/>-->
+					<!--		</HBox>-->
+					<!--	</CustomListItem>-->
+					<!--</List>-->
+				<!--</content>-->
+				<!--<footer>-->
+				<!--	<Bar>-->
+				<!--		<contentRight>-->
+				<!--			<Button icon="sap-icon://manager-insight" text="{i18n>weeklyReportBtn}" type="Default" press="onPressWeeklyReportDis"/>-->
+				<!--			<Button text="{i18n>sendToBtn}" type="Default" press="onPressCancelPress"/>-->
+				<!--		</contentRight>-->
+				<!--		<contentLeft>-->
+				<!--			<Button icon="sap-icon://key-user-settings" press="onPressSettings"/>-->
+				<!--		</contentLeft>-->
+				<!--	</Bar>-->
+				<!--</footer>-->
+		<!--	</Page>-->
+		<!--</pages>-->
+	</App>
+</mvc:View>

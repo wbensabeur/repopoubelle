@@ -1,0 +1,242 @@
+{
+    "resources": [
+        {
+            "name": "i18n/i18n_fr.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n_de.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "controller/WeeklyReport.controller.js"
+        },
+        {
+            "name": "controller/Settings.controller.js"
+        },
+        {
+            "name": "controller/Timesheet.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/AbsenceDetails.controller.js"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "controller/AbsenceCreate.controller.js"
+        },
+        {
+            "name": "controller/KilometerCreate.controller.js"
+        },
+        {
+            "name": "controller/TimeDetails.controller.js"
+        },
+        {
+            "name": "controller/FavoriteProjectList.controller.js"
+        },
+        {
+            "name": "controller/SignaturePad.js"
+        },
+        {
+            "name": "controller/KilometerDetails.controller.js"
+        },
+        {
+            "name": "controller/EquipmentDetails.controller.js"
+        },
+        {
+            "name": "controller/DailyViewDetails.controller.js"
+        },
+        {
+            "name": "controller/DailyAllowanceDetails.controller.js"
+        },
+        {
+            "name": "controller/MySignaturePad.js"
+        },
+        {
+            "name": "controller/Menu.controller.js"
+        },
+        {
+            "name": "controller/DailyAllowanceCreate.controller.js"
+        },
+        {
+            "name": "controller/EquipmentEntryCreate.controller.js"
+        },
+        {
+            "name": "controller/TimeCreate.controller.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/utility.js"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "Component-changes.json"
+        },
+        {
+            "name": "view/SearchProject.fragment.xml"
+        },
+        {
+            "name": "view/TimeDetails.view.xml"
+        },
+        {
+            "name": "view/AbsenceDetails.view.xml"
+        },
+        {
+            "name": "view/WeeklyReport.view.xml"
+        },
+        {
+            "name": "view/Menu.view.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "view/DailyAllowanceDetails.view.xml"
+        },
+        {
+            "name": "view/Timesheet.view.xml"
+        },
+        {
+            "name": "view/SelectProjectWithDelete.fragment.xml"
+        },
+        {
+            "name": "view/EquipmentDetails.view.xml"
+        },
+        {
+            "name": "view/EquipmentEntryCreate.view.xml"
+        },
+        {
+            "name": "view/SearchProjectCriteria.fragment.xml"
+        },
+        {
+            "name": "view/EmpWeekDayDetail.fragment.xml"
+        },
+        {
+            "name": "view/AbsenceCreate.view.xml"
+        },
+        {
+            "name": "view/FavoriteProjectList.view.xml"
+        },
+        {
+            "name": "view/Settings.view.xml"
+        },
+        {
+            "name": "view/KilometerCreate.view.xml"
+        },
+        {
+            "name": "view/DailyViewDetails.view.xml"
+        },
+        {
+            "name": "view/KilometerDetails.view.xml"
+        },
+        {
+            "name": "view/DailyAllowanceCreate.view.xml"
+        },
+        {
+            "name": "view/Signature.fragment.xml"
+        },
+        {
+            "name": "view/AddProjectTime.fragment.xml"
+        },
+        {
+            "name": "view/TimeCreate.view.xml"
+        },
+        {
+            "name": "view/SelectProject.fragment.xml"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "logout.html"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "css/local.css"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "customlib/StepInputCustom.js"
+        },
+        {
+            "name": "customlib/StepInputCustomRenderer.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/mockdata/WeekSummarySet.json"
+        },
+        {
+            "name": "localService/mockdata/WorkDaySet.json"
+        },
+        {
+            "name": "localService/mockdata/ProjectSet.json"
+        },
+        {
+            "name": "localService/mockdata/EmployeeSet.json"
+        },
+        {
+            "name": "fioriHtmlRunner.html"
+        },
+        {
+            "name": "image/back.png"
+        },
+        {
+            "name": "image/VE-blanc-rouge.png"
+        },
+        {
+            "name": "image/externalURL.png"
+        },
+        {
+            "name": "image/vinci-logo.jpg"
+        },
+        {
+            "name": "image/team.png"
+        },
+        {
+            "name": "image/sap.png"
+        },
+        {
+            "name": "image/VE-Blanc-fr.png"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "utility/fragment.js"
+        },
+        {
+            "name": "utility/datetime.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

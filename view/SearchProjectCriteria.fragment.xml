@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	id="SearchProjectCriteria">
+	<VBox width="100%" height="100%">
+		<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="Search Project Criteria" labelSpanXL="3" labelSpanL="3"
+			labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+			columnsL="1" columnsM="1" singleContainerFullSize="false">
+			<f:content>
+				<Label text="Enterprise"/>
+				<ComboBox id="enterprise" enabled="true"  placeholder="Project Selection"></ComboBox>
+				<Label text="Number"/>
+				<Input  type="Text"/>
+				<Label text="Keyword"/>
+				<Input  type="Text"/>
+				<Label text="Position"/>
+				<ComboBox id="position" enabled="true"  placeholder="Position Selection"></ComboBox>
+				<Label text="Responsible PM"/>
+				<Input  type="Text"/>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+<!--	<Bar class="vinciFooterBar">
+		<contentRight>
+			<Button id="CancelButton" text="{i18n>cancel}" type="Transparent" visible="{footer>/ProjectScreen}" press="onPressProjectCancel"/>
+			<Button id="SelectButton" text="{i18n>select}" type="Emphasized" visible="{footer>/ProjectScreen}" press="searchCriteria">
+				<customData>
+					<core:CustomData key="context" value=""/>
+				</customData>
+			</Button>
+		</contentRight>
+	</Bar>-->
+</core:FragmentDefinition>

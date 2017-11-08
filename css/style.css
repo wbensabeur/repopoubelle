@@ -1,0 +1,461 @@
+.projectIdItalic {
+    font-style: italic !important;
+}
+
+
+/* Enter your custom styles here */
+
+
+/*.homeBtnSize .sapMBtnIcon{
+	font-size:30px !important;
+		padding-right :.2rem !important;
+		text-shadow : none;
+}
+.homeBtnSize .sapMBtnContent{
+		font-size:30px !important;
+		padding-right :25rem !important;
+}
+.hourSize.sapMBtn:focus>.sapMToggleBtnPressed{
+		color: white !important;
+		background-color: #3b617e;
+}*/
+.ipdBtnSize .sapMBtnIcon {
+    font-size: 1.5rem;
+    width : 90px;
+    padding-top: .1rem !important;
+}
+
+.actionBtnBacground {
+	/*background-color: #00679e !important;*/
+}
+
+.homeBtnSize .sapMBtnIcon {
+    font-size: 1.5rem;
+}
+
+.homeBtnSize .sapMBtnContent {
+    color: white;
+    font-size: 2rem;
+}
+.homeBtnSize .sapMBtnText>.sapMBtnIconRight {
+    left: auto !important;
+    right: auto !important;
+}
+
+:not(.sapMBtnDisabled) .homeBtnSize>.sapMBtnTransparent>.sapMBtnIcon {
+    color: white;
+    text-shadow: none;
+}
+
+.navigationArrowButton.sapMBtnIcon {
+    color: blueviolet !important;
+}
+
+.navigationArrowButton.sapMBtnContent {
+    font-size: 30px !important;
+    padding-right: 25rem !important;
+}
+
+.menuBackgroundColor {
+    background-color: #2f3c48 !important;
+}
+
+.menuBackgroundColor .sapMLabel {
+    color: white !important;
+}
+
+.menuBackgroundColor .sapMIBar.sapMHeader-CTX {
+    background-color: #2f3c48 !important;
+}
+
+.menuBackgroundColor .sapMIBar-CTX .sapMTitle {
+    color: white !important;
+}
+
+.menuIconColor .sapMBtnIcon {
+    color: white !important;
+}
+
+.btnSelection > span {
+    background-image: none !important;
+    background-color: #427cac !important;
+    border-color: #427cac !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.btnSelection > span > span {
+    background-image: none !important;
+    background-color: #427cac !important;
+    border-color: #427cac !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.circleIcon>span {
+    border-radius: 50%;
+}
+
+.sizeSwipeIcon {
+	font-size : 2.5rem;
+}
+
+.swipeHBoxBackGroundColor {
+	background-color: red !important;
+}
+
+.sapUiTableTr>td {
+    padding: 0.1rem !important;
+    vertical-align: middle !important;
+}
+
+.textColorBlue {
+    color: #346187 !important;
+    font-weight: bold !important;
+    font-size: large;
+}
+
+.textColorWDItemLarge {
+    color: #346187 !important;
+    font-weight: bold !important;
+    font-size: medium;
+}
+
+.textColorWDItemMedium {
+    color: #346187 !important;
+    font-weight: bold !important;
+    font-size: .875rem;
+}
+.textUnderLine{
+	border-bottom: 1px solid;
+    width: 100%;
+}
+
+/*CSS for page background*/
+
+.VinciPage > header {
+    background-color: #144E8B !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.nav-color button[title="Back"] .sapUiIcon:before {
+    color: #ffffff !important;
+}
+
+.sapMIBar-CTX .sapMTitle {
+    color: #ffffff !important;
+}
+
+.sapMDialog.sapMPopup-CTX>header.sapMHeader-CTX,
+.sapMDialog.sapMPopup-CTX>header.sapMSubHeader-CTX {
+    background-color: #144E8B !important;
+}
+
+.VinciBackground {
+    background-color: rgba(20, 35, 94, 1) !important;
+}
+
+.homePageBackground > div > section {
+    opacity: .1 !important;
+}
+
+
+/* Enter your custom styles here */
+
+
+/*Table data*/
+
+
+/*Employee*/
+
+.EmpWeekStatus {
+    text-align: left;
+    padding-left: .75rem;
+    height: 60px;
+}
+
+.EmpName {
+    color: #3b617e !important;
+    font-weight: bold !important;
+    padding-top: .75rem;
+}
+
+.EmpWeekDetails {
+    color: #3b617e !important;
+    font-style: italic !important;
+    font-size: 0.7rem !important;
+}
+
+.EmpWeekStatus[data-status="S"] {
+    background-color: #39a9db;
+}
+
+.EmpWeekStatus[data-status="D"] {
+    background-color: #e6e7e8;
+}
+
+.EmpWeekStatus[data-status="W"] {
+    background-color: #f9cB82;
+}
+
+.EmpWeekStatus[data-status="V"] {
+    background-color: #00dbc0;
+}
+
+.EmpWeekStatus[data-status="R"] {
+    background-color: #fc6b8a;
+}
+
+.sapMToggleBtnPressed {
+    background-color: rgb(52, 97, 135);
+}
+
+
+/*Day Cell*/
+
+/*.sapMListHdr {
+    color: #346187 !important;
+    font-weight: bold !important;
+    font-size: large;
+    border-bottom: 0 solid #cccccc;
+}*/
+.textColorWDItemLarge>header {
+    color: #346187 !important;
+    font-weight: bold !important;
+    font-size: medium;
+    border-bottom: 0 solid #cccccc;
+}
+
+.sapMListTblCell {
+    padding-top: 0rem !important;
+    padding-right: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+    vertical-align: top;
+    font-size: 0.875rem;
+}
+
+.pressedSize {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(52, 97, 135);
+}
+
+.pressedReducedSize>span>span {
+    font-size: 18px !important;
+}
+
+.pressedSize>span>span {
+    font-size: 18px !important;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.pressedSize>span {
+    height: 100%;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+
+.hourSize {
+    height: 60px;
+    width: 100%;
+}
+
+.hourSize>div {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+
+.pressedSize>div {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+    border-width : 0 !important;
+    border-style : none !important;
+}
+
+.hourSize>div>span {
+	font-size: 1rem !important;
+}
+
+.pressedSize>div>span {
+	font-size: 1rem !important;
+}
+
+.hourSize>span {
+    height: 100%;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+}
+
+.hourSize>span>span {
+	font-size: 18px !important;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.hourSize[data-status="S"]>span>span {
+    color: white;
+}
+
+.hourSize[data-background="L"] {
+    background-color: rgb(232, 241, 246);
+}
+
+.hourSize[data-status="S"] {
+    background-color: #39a9db;
+}
+
+.hourSize[data-status="D"] {
+    background-color: #e6e7e8;
+}
+
+.hourSize[data-status="W"] {
+    background-color: #f9cB82;
+}
+
+.hourSize[data-status="V"] {
+    background-color: #00dbc0;
+}
+
+.hourSize[data-status="R"] {
+    background-color: #fc6b8a;
+}
+
+.workDayItemBoxShadow {
+    box-shadow: 1px 1px 5px 1px #e5e5e5 !important;
+}
+
+.workDayItemBorderBottom {
+    border-bottom: 0 solid #e5e5e5 !important;
+}
+
+.homeBtnSize>.sapMBtnTransparent>.sapMBtnIcon {
+    color: white !important;
+    width:100% !important;
+    height: 100% !important;
+}
+
+.circleIcon>.sapMBtnTransparent>.sapMBtnIcon {
+    color: white !important;
+}
+
+.homeNavBtnSize>.sapMBtnTransparent>.sapMBtnIcon {
+    color: #0070b1 !important;
+}
+
+.borderHboxLeft {
+    border: 1px ridge;
+    background-color: rgb(84, 152, 207);
+    min-width: 4.5rem;
+}
+
+.borderHboxRight {
+    border: 1px ridge;
+}
+
+.VinciBar {
+    background-color: rgba(20, 35, 94, 1) !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.vinciWeekNavigation {
+    color: #f5f1f1 !important;
+    font-style: bold !important;
+    font-size :12px;
+}
+
+.vinciFooterBar {
+    background-color: black !important;
+}
+
+.tableColumn {
+    padding-top: 0.5rem;
+    padding-left: 0.1rem;
+}
+
+.homeNavBtnSize .sapMBtnIcon {
+    font-size: 1.5rem;
+    padding-right: .2rem !important;
+    text-shadow: none;
+}
+
+.homeNavBtnSize .sapMBtnContent {
+    font-size: 30px !important;
+    padding-right: 25rem !important;
+}
+
+.EmployeeName {
+    color: white;
+    font-size: 1rem;
+}
+
+.EmployeeAttribute {
+    color: white;
+}
+
+.EmployeeWeeklyReportColumn {
+    background-color: rgb(188, 210, 229);
+}
+
+.EmployeeWeeklyReportAggregateRow {
+    border-bottom: .05rem solid black;
+    border-right: .05rem solid black;
+}
+
+.EmployeeWeeklyReportAggregateRow[data-background="T"] {
+    background-color: rgb(217, 235, 246);
+}
+
+.EmployeeWeeklyReportAggregateRow[data-background="NT"] {
+    background-color: #f9cb82;
+}
+
+.textAlignmentStart>td {
+    text-align: start !important;
+    border-right: 0rem !important;
+}
+
+.ProjectLabel {
+    text-decoration: underline !important;
+}
+.smallFontSize{
+	font-size : smaller;
+}
+ /*step input custom css class needed */
+.customStep.sapMStepInput .sapMStepInputBtn {
+    outline: none;
+    position: absolute;
+    z-index: 1;
+    color: #346187;
+}    
+customStep.sapMStepInput .sapMStepInputBtn.sapMStepInputBtnDecrease {
+    left: 0;
+}
+.customStep.sapMStepInput .sapMStepInputBtn.sapMStepInputBtnIncrease {
+    right: 0;
+}
+.customStep.sapUiIcon {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    display: inline-block;
+    vertical-align: baseline;
+}
+.customStep.sapMStepInput-CTX .sapUiIcon {
+    height: 2.375rem;
+    width: 2.375rem;
+    line-height: 2.375rem;
+    margin-top: 0.3125rem;
+}
+.customStep >div>input {
+    text-align : center !important;
+}
+.customWidthIE > div {
+	width : 100%;
+}
+.customWidthButton > div {
+	width : 35%;
+}

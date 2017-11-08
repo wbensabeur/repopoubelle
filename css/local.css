@@ -1,0 +1,22 @@
+.sapUiUfdShellHeader {
+    background-color: #004586;
+}
+
+.sapUiUfdShellHeadUsrItm {
+    color: white;
+}
+
+.sapUiUfdShellHeadItm:hover>span {
+    background-color: #004586 !important;
+}
+
+.sapUiUfdShellHeadItm>span,
+.sapUiUfdShellHeadUsrItm {
+    color: white;
+    text-shadow: none;
+}
+
+.sapUiUfdShellHeadBegin>.sapUiUfdShellIco>img {
+    max-height: 44px !important;
+    max-width: 125px !important;
+}

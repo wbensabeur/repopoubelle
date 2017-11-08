@@ -1,0 +1,183 @@
+[{
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501459200000)/",
+	"Status": "D",
+	"TargetHours": "7",
+	"FilledHours": "6",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "2",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1464447472000)/",
+	"EndDate": "/Date(1554389872000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-07-31T00%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2008-03-01T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%201',WorkDate=datetime'2008-03-01T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}, {
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501545600000)/",
+	"Status": "D",
+	"TargetHours": "8",
+	"FilledHours": "5",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "3",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1274194672000)/",
+	"EndDate": "/Date(1331477872000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-08-1T12%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%202',WorkDate=datetime'2005-07-09T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%202',WorkDate=datetime'2005-07-09T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}, {
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501632000000)/",
+	"Status": "D",
+	"TargetHours": "7",
+	"FilledHours": "4",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "1",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1332082672000)/",
+	"EndDate": "/Date(1262703472000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-08-2T12%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%203',WorkDate=datetime'2011-08-15T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%203',WorkDate=datetime'2011-08-15T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}, {
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501718400000)/",
+	"Status": "R",
+	"TargetHours": "8",
+	"FilledHours": "6",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "2",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1488639472000)/",
+	"EndDate": "/Date(1044111472000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-08-3T12%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%204',WorkDate=datetime'2019-03-01T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%204',WorkDate=datetime'2019-03-01T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}, {
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501804800000)/",
+	"Status": "R",
+	"TargetHours": "4",
+	"FilledHours": "3",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "3",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1162306672000)/",
+	"EndDate": "/Date(1097074672000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-08-4T12%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%205',WorkDate=datetime'2001-02-10T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%205',WorkDate=datetime'2001-02-10T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}, {
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501891200000)/",
+	"Status": "V",
+	"TargetHours": "2",
+	"FilledHours": "4",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "2",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1291215472000)/",
+	"EndDate": "/Date(1218121072000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-08-5T12%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%206',WorkDate=datetime'2011-05-12T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%206',WorkDate=datetime'2011-05-12T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}, {
+	"EmployeeId": "50009223",
+	"WorkDate": "/Date(1501977600000)/",
+	"Status": "V",
+	"TargetHours": "7",
+	"FilledHours": "6",
+	"AbsenceHours": "0",
+	"DayAllowanceQuantity": "0",
+	"DayKms": "1",
+	"IsWorkingDay": false,
+	"StartDate": "/Date(1505573872000)/",
+	"EndDate": "/Date(1113577072000)/",
+	"__metadata": {
+		"uri": "WorkDaySet(EmployeeId='50009223',WorkDate=datetime'2017-08-6T12%3A00%3A00')",
+		"type": "ZHR_MOB_TIMESHEET_SRV.WorkDay"
+	},
+	"NavAbsenceItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%207',WorkDate=datetime'2008-01-10T14%3A57%3A52')/NavAbsenceItems"
+		}
+	},
+	"NavWorkDayTimeItems": {
+		"__deferred": {
+			"uri": "WorkDaySet(EmployeeId='EmployeeId%207',WorkDate=datetime'2008-01-10T14%3A57%3A52')/NavWorkDayTimeItems"
+		}
+	}
+}]

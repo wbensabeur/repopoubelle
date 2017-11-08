@@ -1,0 +1,213 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core" controllerName="com.vinci.timesheet.employee.controller.Timesheet" displayBlock="true">
+	<Page id="timesheetId" showHeader="false" visible="true" backgroundDesign="Transparent" busy="{timesheetview>/busy}" class="VinciBackground  VinciPage">
+		<content>
+			<Bar design="SubHeader" class="VinciBar">
+				<contentLeft><Button icon="sap-icon://arrow-left" type="Transparent" press="onPastPeriodNavPress" class="circleIcon"/></contentLeft>
+				<contentMiddle>
+					
+					<Text text="{parts:['calendar>/StartDate'],formatter:'.utility.periodFormat'}"  textAlign="Center"
+						class="monthLabelPadding vinciWeekNavigation"/>
+					
+				</contentMiddle>
+				<contentRight><Button icon="sap-icon://arrow-right" type="Transparent" press="onFuturePeriodNavPress" class="circleIcon"/></contentRight>
+			</Bar>
+			<!--<u:CalendarDateInterval showDayNamesLine="true" id="calendar" width="100%" select="handleCalendarSelect" />-->
+			<Table id="table" columns="{ path: 'calendar>/data' }" noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}" updateFinished="onUpdateFinished" showSeparators="None" inset="false"
+				class="employeeListTable">
+				<columns>
+					<Column width="{calendar>width}" hAlign="Center">
+						<VBox class="tableColumn" alignItems="Center" justifyContent="Center" height="auto">
+							<!--	<ComboBox class="tableColumnCombo" visible="{calendar>ComboVisible}" value="{calendar>ColumnTxt1}"/>-->
+							<!--	<Label class="tableBULabel" visible="{calendar>ComboVisible}" text="{calendar>ColumnTxt2}"/>-->
+							<Label text="{calendar>ColumnTxt1}" visible="{path:'calendar>ComboVisible',formatter:'.utility.booleanNot'}" design="Bold" class="textColorBlue"/>
+							<Label text=" {calendar>ColumnTxt2}" visible="{path:'calendar>ComboVisible',formatter:'.utility.booleanNot'}" design="Bold" class="textColorBlue"/>
+							<customData>
+								<!--<core:CustomData key="background" value="" writeToDom="false"/>-->
+							</customData>
+						</VBox>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="columnList" vAlign="Middle" class="sapUiTableTr">
+						<cells>
+							<ToggleButton text="{parts:['WeekDate1Hours'],formatter:'.utility.numberFormatter'}" type="Transparent"  class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status"  value="{path:'WeekDate1Status', formatter:'.utility.statusFormatter'}"    writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate1Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate1Date}"/>
+								</customData>
+							</ToggleButton>
+							<ToggleButton text="{parts:['WeekDate2Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status" value="{path:'WeekDate2Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate2Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate2Date}"/>
+								</customData>
+							</ToggleButton>
+							<ToggleButton text="{parts:['WeekDate3Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status" value="{path:'WeekDate3Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate3Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate3Date}"/>
+								</customData>
+							</ToggleButton>
+							<ToggleButton text="{parts:['WeekDate4Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status" value="{path:'WeekDate4Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate4Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate4Date}"/>
+								</customData>
+							</ToggleButton>
+							<ToggleButton text="{parts:['WeekDate5Hours'],formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status" value="{path:'WeekDate5Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate5Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate5Date}"/>
+								</customData>
+							</ToggleButton>
+							<ToggleButton text="{path:'WeekDate6Hours', formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status" value="{path:'WeekDate6Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate6Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate6Date}"/>
+								</customData>
+							</ToggleButton>
+							<ToggleButton text="{path:'WeekDate7Hours', formatter:'.utility.numberFormatter'}" type="Transparent" class="hourSize" press="OnHourPress">
+								<customData>
+									<core:CustomData key="status" value="{path:'WeekDate7Status', formatter:'.utility.statusFormatter'}" writeToDom="true"/>
+									<core:CustomData key="background" value="{path:'WeekDate7Date', formatter:'.utility.bckgrndFormatter'}" writeToDom="true"/>
+									<core:CustomData key="employee" value="{EmployeeId}"/>
+									<core:CustomData key="selectedDate" value="{WeekDate7Date}"/>
+								</customData>
+							</ToggleButton>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<List >
+			
+			<CustomListItem  type="Inactive" visible="{userPreference>/defaultHours}" >
+				<HBox height="4rem">
+					<HBox width="20%" class="borderHboxLeft sapUiTinyMargin">
+						<HBox width="100%" alignItems="Center" fitContainer="true" renderType="Bare" height="100%" wrap="Wrap">
+							<Button icon="sap-icon://request" width="100%" type="Transparent" iconFirst="false" text="+" press="onPressTimeCreate" class="homeBtnSize actionBtnBacground"/>
+						</HBox>
+					</HBox>
+					<HBox width="80%" class="borderHboxRight sapUiTinyMargin">
+						<HBox width="100%">
+						<!--	<Button type="Transparent" press="onPressTimeCreate" class="homeBtnSize"/>-->
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<!--<Label text="{i18n>totalTime}" class="textColorBlue"/>-->
+								<Label text="{parts:['WorkDayModel>/TargetHours'],formatter:'.utility.numberConvertor'}  {i18n&gt;hours} " textAlign="Left"
+									class="textColorBlue" design="Bold"/>
+							</VBox>
+						</HBox>
+						<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressTimeDetails"/>
+					</HBox>
+				</HBox>
+			</CustomListItem>
+			<CustomListItem type="Inactive" visible="{userPreference>/defaultIPD}" >
+				<HBox height="4rem">
+					<HBox width="20%" class="borderHboxLeft sapUiTinyMargin">
+						<HBox width="100%" alignItems="Center" fitContainer="true" renderType="Bare" height="100%" wrap="Wrap">
+							<Button icon="sap-icon://meal" width="100%" type="Transparent" iconFirst="false" text="+" press="onPressAllowanceCreate" class="homeBtnSize actionBtnBacground"/>
+						</HBox>
+					</HBox>
+					<HBox width="80%" class="borderHboxRight sapUiTinyMargin" alignItems="Start" justifyContent="SpaceBetween">
+						<HBox width="100%">
+							<!--<Button type="Transparent" press="onPressAllowanceCreate" class="homeBtnSize"/>-->
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<!--		<Label text="{i18n>totalAllowance}" class="textColorBlue"/>-->
+								<Label text="{parts:['WorkDayModel>/DayAllowanceQuantity'],formatter:'.utility.numberConvertor'}  {i18n&gt;ipd}" class="textColorBlue"
+									design="Bold"/>
+							</VBox>
+						</HBox>
+						<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressAllowanceDetails"	/>
+					</HBox>
+				</HBox>
+			</CustomListItem>
+			<CustomListItem visible="{userPreference>/defaultKM}" type="Inactive">
+					<!--<CustomListItem visible="true" type="Inactive">-->
+				<HBox height="4rem">
+					<HBox width="20%" class="borderHboxLeft sapUiTinyMargin">
+						<HBox width="100%" alignItems="Center" fitContainer="true" renderType="Bare" height="100%" wrap="Wrap">
+							<Button icon="sap-icon://map" width="100%" type="Transparent" iconFirst="false" text="+ " press="onPressKilometerCreate" class="homeBtnSize actionBtnBacground"/>
+						</HBox>
+					</HBox>
+					<HBox width="80%" class="borderHboxRight sapUiTinyMargin">
+						<HBox width="100%">
+						<!--	<Button type="Transparent" press="onPressKilometerCreate" class="homeBtnSize"/>-->
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<!--	<Label text="{i18n>totalKM}" class="textColorBlue"/>-->
+								<Label text="{parts:['WorkDayModel>/DayKms'],formatter:'.utility.numberConvertor'}  {i18n&gt;km}" class="textColorBlue" design="Bold"/>
+							</VBox>
+						</HBox>
+						<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressKilometerDetails"/>
+					</HBox>
+				</HBox>
+			</CustomListItem>
+			<CustomListItem visible="{userPreference>/defaultAbsence}" type="Inactive">
+									<!--<CustomListItem visible="true" type="Inactive">-->
+				<HBox height="4rem">
+					<HBox width="20%" class="borderHboxLeft sapUiTinyMargin">
+						<HBox width="100%" alignItems="Center" fitContainer="true" renderType="Bare" height="100%" wrap="Wrap">
+							<Button icon="sap-icon://general-leave-request" width="100%" type="Transparent" iconFirst="false" text="+" press="onPressAbsenceCreate" class="homeBtnSize actionBtnBacground"/>
+						</HBox>
+					</HBox>
+					<HBox width="80%" class="borderHboxRight sapUiTinyMargin">
+						<HBox width="100%">
+						<!--	<Button type="Transparent" press="onPressAbsenceCreate" class="homeBtnSize"/>-->
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<!--	<Label text="{i18n>totalAbsence}" class="textColorBlue"/>-->
+								<Label text="{parts:['WorkDayModel>/AbsenceHours'],formatter:'.utility.numberConvertor'}  {i18n&gt;hours}" class="textColorBlue"
+									design="Bold"/>
+							</VBox>
+						</HBox>
+						<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressAbsenceDetails"
+							/>
+					</HBox>
+				</HBox>
+			</CustomListItem>
+			<CustomListItem visible="{userPreference>/defaultEquipment}" type="Inactive">
+				<HBox height="4rem">
+					<HBox width="20%" class="borderHboxLeft sapUiTinyMargin">
+						<HBox width="100%" alignItems="Center" fitContainer="true" renderType="Bare" height="100%" wrap="Wrap">
+							<Button icon="sap-icon://shipping-status" width="100%" type="Transparent" iconFirst="false" text="+" press="onPressTimeCreate"
+								class="homeBtnSize actionBtnBacground"/>
+						</HBox>
+					</HBox>
+					<HBox width="80%" class="borderHboxRight sapUiTinyMargin">
+						<HBox width="100%">
+						<!--	<Button type="Transparent" press="onPressEquipEntryCreate" class="homeBtnSize"/>-->
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<!--	<Label text="{i18n>equipment}" class="textColorBlue"/>-->
+								<Label text="0" class="textColorBlue" design="Bold"/>
+							</VBox>
+						</HBox>
+						<Button icon="sap-icon://navigation-right-arrow" type="Transparent" press="onPressEquipmentDetails"	/>
+					</HBox>
+				</HBox>
+			</CustomListItem>
+			</List>
+		</content>
+		<footer>
+			<Bar class="vinciFooterBar">
+<!--<contentLeft>
+	<Button text="{i18n>appCheckVersion}" type="Accept" press="onPressCheckVersion"/>
+</contentLeft>-->
+				<contentRight>
+					<Button text="{i18n>viewDetails}" type="Reject" press="onPressViewDetailslPress"/>
+					<Button icon="sap-icon://manager-insight" text="{i18n>weeklyReportBtn}" type="Emphasized" press="onPressWeeklyReport"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

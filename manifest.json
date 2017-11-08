@@ -1,0 +1,307 @@
+{
+    "_version": "1.5.0",
+    "sap.app": {
+        "id": "com.vinci.timesheet.employee",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZHR_MOB_TIMESHEET_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "intent1": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "LeaveRequest",
+                    "action": "displayLeaveRequestExtension"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "com.vinci.timesheet.employee.view.Home",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.30.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.comp": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.uxap": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.vinci.timesheet.employee.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ],
+            "js": [
+                {
+                    "uri": "controller/MySignaturePad.js"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "com.vinci.timesheet.employee.view",
+                "controlId": "idFullWidthAppControl",
+                "controlAggregation": "pages",
+                "clearTarget": false
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "Home",
+                    "target": [
+                        "Home"
+                    ]
+                },
+                {
+                    "pattern": "Settings",
+                    "name": "Settings",
+                    "target": [
+                        "Settings"
+                    ]
+                },
+                {
+                    "pattern": "Timesheet",
+                    "name": "Timesheet",
+                    "target": [
+                        "Timesheet"
+                    ]
+                },
+                {
+                    "pattern": "TimeCreate",
+                    "name": "TimeCreate",
+                    "target": [
+                        "TimeCreate"
+                    ]
+                },
+                {
+                    "pattern": "TimeDetails",
+                    "name": "TimeDetails",
+                    "target": [
+                        "TimeDetails"
+                    ]
+                },
+                {
+                    "pattern": "DailyAllowanceCreate",
+                    "name": "DailyAllowanceCreate",
+                    "target": [
+                        "DailyAllowanceCreate"
+                    ]
+                },
+                {
+                    "pattern": "DailyAllowanceDetails",
+                    "name": "DailyAllowanceDetails",
+                    "target": [
+                        "DailyAllowanceDetails"
+                    ]
+                },
+                {
+                    "pattern": "KilometerCreate",
+                    "name": "KilometerCreate",
+                    "target": [
+                        "KilometerCreate"
+                    ]
+                },
+                {
+                    "pattern": "KilometerDetails",
+                    "name": "KilometerDetails",
+                    "target": [
+                        "KilometerDetails"
+                    ]
+                },
+                {
+                    "pattern": "AbsenceCreate",
+                    "name": "AbsenceCreate",
+                    "target": [
+                        "AbsenceCreate"
+                    ]
+                },
+                {
+                    "pattern": "AbsenceDetails",
+                    "name": "AbsenceDetails",
+                    "target": [
+                        "AbsenceDetails"
+                    ]
+                },
+                {
+                    "pattern": "EquipmentEntryCreate",
+                    "name": "EquipmentEntryCreate",
+                    "target": [
+                        "EquipmentEntryCreate"
+                    ]
+                },
+                {
+                    "pattern": "EquipmentDetails",
+                    "name": "EquipmentDetails",
+                    "target": [
+                        "EquipmentDetails"
+                    ]
+                },
+                {
+                    "pattern": "WeeklyReport",
+                    "name": "WeeklyReport",
+                    "target": [
+                        "WeeklyReport"
+                    ]
+                },
+                {
+                    "name": "DailyViewDetails",
+                    "pattern": "DailyViewDetails",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "DailyViewDetails"
+                    ]
+                },
+                {
+                    "pattern": "FavoriteProjectList",
+                    "name": "FavoriteProjectList",
+                    "target": [
+                        "FavoriteProjectList"
+                    ]
+                }
+            ],
+            "targets": {
+                "Home": {
+                    "viewName": "Home",
+                    "viewLevel": 1
+                },
+                "Timesheet": {
+                    "viewName": "Timesheet",
+                    "viewLevel": 2
+                },
+                "Settings": {
+                    "viewName": "Settings",
+                    "viewLevel": 2
+                },
+                "TimeCreate": {
+                    "viewName": "TimeCreate",
+                    "viewLevel": 4
+                },
+                "TimeDetails": {
+                    "viewName": "TimeDetails",
+                    "viewLevel": 2
+                },
+                "DailyAllowanceCreate": {
+                    "viewName": "DailyAllowanceCreate",
+                    "viewLevel": 4
+                },
+                "DailyAllowanceDetails": {
+                    "viewName": "DailyAllowanceDetails",
+                    "viewLevel": 2
+                },
+                "KilometerCreate": {
+                    "viewName": "KilometerCreate",
+                    "viewLevel": 4
+                },
+                "KilometerDetails": {
+                    "viewName": "KilometerDetails",
+                    "viewLevel": 2
+                },
+                "AbsenceCreate": {
+                    "viewName": "AbsenceCreate",
+                    "viewLevel": 4
+                },
+                "AbsenceDetails": {
+                    "viewName": "AbsenceDetails",
+                    "viewLevel": 2
+                },
+                "EquipmentEntryCreate": {
+                    "viewName": "EquipmentEntryCreate",
+                    "viewLevel": 4
+                },
+                "EquipmentDetails": {
+                    "viewName": "EquipmentDetails",
+                    "viewLevel": 2
+                },
+                "WeeklyReport": {
+                    "viewName": "WeeklyReport",
+                    "viewLevel": 2
+                },
+                "FavoriteProjectList": {
+                    "viewName": "FavoriteProjectList",
+                    "viewLevel": 5
+                },
+                "DailyViewDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewName": "DailyViewDetails",
+                    "viewLevel": 2
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "",
+        "_version": "1.1.0"
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/z_hr_emp_ts",
+        "_version": "1.1.0"
+    }
+}

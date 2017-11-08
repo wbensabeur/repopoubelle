@@ -1,0 +1,65 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.DailyAllowanceCreate" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>addIPD}" navButtonPress="onPressNavBack" showNavButton="true" busy="{timeCreateView>/busy}" class="nav-color VinciPage"> 
+		<content>
+		<VBox alignContent="SpaceAround" width="100%" alignItems="Start" justifyContent="SpaceAround" id="dailyAllownceCreate">	
+			<VBox class="sapUiSmallMargin" width="100%">
+				<Select autoAdjustWidth="false" selectedKey="{ZoneType}"	width="240px" items="{path:'/ValueHelpSet',  filters: [{ path: 'ApplicationName', operator: 'EQ', value1: 'EMPLOYEE'},{ path: 'HelpType', operator: 'EQ', value1: 'ZN'}]}" id="zoneCombo">
+					<core:Item key="{FieldDescription}" text="{FieldDescription}" />
+				<layoutData>
+					<FlexItemData growFactor="1"/>
+				</layoutData>
+				</Select>
+			</VBox>
+			
+			<VBox>
+				<items>
+					<FlexBox  class="sapUiSmallMarginBegin" id="allowanceSelection">
+						<items>
+							<ToggleButton  icon="sap-icon://meal" press="onPressMeal" class="sapUiSmallMarginTop"  width="6rem" pressed="{path:'MealIndicator', formatter:'.utility.onMealPress'}"/>
+							<ToggleButton icon="sap-icon://car-rental"  press="onPressTravel" class="sapUiSmallMarginTop" width="6rem" pressed="{path:'JourneyIndicator', formatter:'.utility.onJourneyPress'}" />
+							<ToggleButton icon="sap-icon://flight"  press="onPressTransport" class="sapUiSmallMarginTop " width="6rem"  pressed="{path:'TransportIndicator', formatter:'.utility.onTransportPress'}" />
+						</items>
+					</FlexBox>
+				</items>
+			</VBox>
+					<Text text="{i18n>selectIPDProject}"  class="textColorBlue sapUiSmallMargin" />
+				<VBox alignItems="Start" justifyContent="Start" class="sapUiSmallMargin" id="createTime">
+							<VBox>
+								
+								<Link text="{ProjectDescription}" class="sapUiSmallMarginTop ProjectLabel" visible="false"/>
+							<!--	 <Label visible="false"  text="{ProjectDescription}" >  </Label>-->
+								 <Label visible="false"  text="{ProjectId}" >  </Label>
+								 	<Link text="{ProjectName}" class="sapUiSmallMarginTop ProjectLabel" visible="false"/>
+							</VBox>
+							</VBox>
+				<VBox  class="sapUiSmallMargin">
+			<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SelectProjectWithDelete' type='XML'/>
+			
+</VBox>
+
+				
+	</VBox>			
+	<VBox id="projectSearchFragment" visible="false">
+					<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SearchProject' type='XML'/>
+				</VBox>
+		</content>
+		<footer>
+			<Bar id="dailyAllowanceFooter" class="vinciFooterBar">
+				<contentRight>
+					<Button type="Reject" text="{i18n>tcCancel}" id="addTimeCancelButton" press="onPressCancel">
+					</Button>
+					<Button type="Accept"   text="{i18n>daRegister}" press="onPressSave" id="addTimeSelectButton">
+					</Button>
+						<Button id="ProjectCancelButton" text="{i18n>tcCancel}" type="Reject" visible="false" press="onPressProjectCancel"/>
+					<Button id="ProjectSelectButton" text="{i18n>select}" type="Accept" visible="false" press="onPressProjectSelect">
+						<customData>
+							<core:CustomData key="context" value="" />
+						</customData>
+					</Button>
+
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

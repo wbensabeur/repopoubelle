@@ -1,0 +1,126 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.TimeCreate" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>timeCreateTitle}" navButtonPress="onPressNavBack" showNavButton="true" busy="{timeCreateView>/busy}" class="nav-color VinciPage">
+		<content>
+			<VBox id="timeCreateScreen" visible="true" width="100%">
+	<!--		<ComboBox class="sapUiSmallMarginBegin sapUiSmallMarginBottom sapUiMediumMarginEnd" placeholder="{i18n>selectProject}"
+				selectedKey="{timeCreateView>/projectId}" width="100%">
+				<core:Item key="{ProjectId}" text="{ProjectName}"/>
+			</ComboBox>
+			<Button icon="sap-icon://favorite-list" press="onPressFavorite" type="Transparent" class="sapUiMediumMarginBegin homeBtnSize"/>
+			</HBox>-->
+			<!--	<VBox alignItems="Start" justifyContent="Start" class="sapUiSmallMarginTop sapUiSmallMarginBottom">
+							<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SelectProject' type='XML'/>
+						</VBox>-->
+						<VBox alignItems="Start" justifyContent="Start" class="sapUiSmallMargin" id="createTime" width="100%">
+							<VBox width="100%">
+								<Link text="{ProjectDescription}" class="sapUiSmallMarginTop ProjectLabel" visible="false"/>
+								 <!--<Label visible="false"  text="{ProjectDescription}" >  </Label>-->
+								 <Label visible="false"  text="{ProjectId}" >  </Label>
+									<Link text="{ProjectName}" class="sapUiSmallMarginTop ProjectLabel" visible="false"/>
+							</VBox>
+							<VBox width="100%">
+							<core:Fragment fragmentName='com.vinci.timesheet.employee.view.AddProjectTime' type='XML'/>
+						</VBox>
+						</VBox>
+		<!--	<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>hourDetails}"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<VBox>
+						<items>
+					<SegmentedButton selectedKey="{timeCreateView>/hrValue}" class="sapUiSmallMarginBottom" visible="{settings>/timeCountDuration}">
+						<items>
+							<SegmentedButtonItem text="1" key="1"/>
+							<SegmentedButtonItem text="2" key="2"/>
+							<SegmentedButtonItem text="4" key="4"/>
+							<SegmentedButtonItem text="6" key="6"/>
+							<SegmentedButtonItem text="8" key="8"/>
+							<SegmentedButtonItem text="..." key="0"/>
+						</items>
+					</SegmentedButton>
+					<HBox class="sapUiSmallMarginBegin sapUiSmallMarginBottom" visible="{settings>/timeCountDate}">
+					<Text text="{i18n>firstDay}" class="sapUiSmallMarginTop"/>
+					<DatePicker displayFormat="long" dateValue="{timeCreateView>/firstDay}" maxDate="{timeCreateView>/lastDay}" change="handleChange"
+						class="sapUiSmallMarginBegin"/>
+				</HBox>
+				<HBox class="sapUiSmallMarginBegin sapUiSmallMarginBottom" visible="{settings>/timeCountDate}">
+					<Text text="{i18n>lastDay}" class="sapUiSmallMarginTop"/>
+					<DatePicker displayFormat="long" dateValue="{timeCreateView>/lastDay}" minDate="{timeCreateView>/firstDay}" change="handleChange"
+						class="sapUiSmallMarginBegin"/>
+				</HBox>
+					<SegmentedButton selectedKey="{timeCreateView>/attendeesType}" class="sapUiSmallMarginBottom sapUiMediumMarginEnd">
+						<items>
+							<SegmentedButtonItem text="{i18n>normalHrs}" key="1"/>
+							<SegmentedButtonItem text="{i18n>nightHrs}" key="2"/>
+							<SegmentedButtonItem text="..." key="4"/>
+						</items>
+					</SegmentedButton>
+					</items>
+					</VBox>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>dailyAllowances}"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<SegmentedButton selectedKey="{timeCreateView>/zone}" class="sapUiSmallMarginBottom">
+						<items>
+							<SegmentedButtonItem text="{i18n>z1}" key="z1"/>
+							<SegmentedButtonItem text="{i18n>z2}" key="z2"/>
+							<SegmentedButtonItem text="{i18n>z3}" key="z3"/>
+							<SegmentedButtonItem text="{i18n>z4}" key="z4"/>
+							<SegmentedButtonItem text="{i18n>z5}" key="z5"/>
+							<SegmentedButtonItem text="{i18n>z6}" key="z6"/>
+						</items>
+					</SegmentedButton>
+					<FlexBox alignItems="Start" justifyContent="Start">
+						<items>
+							<Button icon="sap-icon://meal" text="{i18n>meal}" press="onPressMeal" class="sapUiSmallMarginTopBottom homeBtnSize"/>
+							<Button icon="sap-icon://car-rental" text="{i18n>travel}" press="onPressTravel" class="sapUiSmallMarginTopBottom homeBtnSize"/>
+							<Button icon="sap-icon://flight" text="{i18n>transport}" press="onPressTransport" class="sapUiSmallMarginTopBottom homeBtnSize"/>
+						</items>
+					</FlexBox>
+				</content>
+			</Panel>-->
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>comments}"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<TextArea value="{Comment}" rows="4" width="100%" id="commentsArea"/>
+				</content>
+			</Panel>
+		</VBox>
+			<VBox id="projectSearchFragment" visible="false">
+					<core:Fragment fragmentName='com.vinci.timesheet.employee.view.SearchProject' type='XML'/>
+				</VBox>
+		</content>
+			<footer>
+			<Bar class="vinciFooterBar" id="addTimeFooter">
+				<contentLeft>
+					<Label text="{ProjectName}" />
+				</contentLeft>
+				<contentRight>
+					<Button id="addTimeCancelButton" text="{i18n>tcCancel}" type="Reject" visible="{footer>/ProjectScreen}" press="onPressCancel"/>
+					<Button id="addTimeSelectButton" text="{i18n>daRegister}"  type="Accept" visible="{footer>/ProjectScreen}" press="saveEntries">
+					</Button>
+					<Button id="ProjectCancelButton" text="{i18n>tcCancel}" type="Reject" visible="false" press="onPressProjectCancel"/>
+					<Button id="ProjectSelectButton" text="{i18n>select}" type="Accept" visible="false" press="onPressProjectSelect">
+						<customData>
+							<core:CustomData key="context" value="" />
+						</customData>
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

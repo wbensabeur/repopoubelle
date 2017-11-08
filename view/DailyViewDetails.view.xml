@@ -1,0 +1,687 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.DailyViewDetails" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Page title="{i18n>DailyViewDetails}" navButtonPress="onPressNavBack" showNavButton="true" showHeader="true" visible="true"
+		busy="{timesheetview>/busy}" class="nav-color  VinciPage">
+		<content>
+			<core:Fragment fragmentName="com.vinci.timesheet.employee.view.EmpWeekDayDetail" type="XML"></core:Fragment>
+			<List id="listWKD1" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList1" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Text text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMargin" height="1rem" width="1rem" alignItems="Center" justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+								<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon  src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD1"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+									<customData>
+								<core:CustomData key="deleteId" value="listWKD1"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<List id="listWKD2" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList2" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Text text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+							<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon  src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD2"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+										<customData>
+								<core:CustomData key="deleteId" value="listWKD2"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<List id="listWKD3" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList3" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Text text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+							<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD3"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+										<customData>
+								<core:CustomData key="deleteId" value="listWKD3"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<List id="listWKD4" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList4" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+							<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon  src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD4"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+										<customData>
+								<core:CustomData key="deleteId" value="listWKD4"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<List id="listWKD5" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList5" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Text text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+						<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon  src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD5"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+										<customData>
+								<core:CustomData key="deleteId" value="listWKD5"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<List id="listWKD6" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList6" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Text text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+								<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD6"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+										<customData>
+								<core:CustomData key="deleteId" value="listWKD6"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<List id="listWKD7" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" swipe="handleSwipe"
+				swipeDirection="RightToLeft">
+				<CustomListItem id="columnList7" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="75%" class="sapUiSmallMargin">
+							<VBox>
+								<Text text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Text text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Text text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType','KMNumber'],formatter:'.utility.numberUnitFormatter'}"
+										class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+								<HBox>
+									<Label text="{ZoneName}" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://meal" visible="{MealIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://car-rental" visible="{JourneyIndicator}" class="sapUiSmallMarginBegin"/>
+									<core:Icon src="sap-icon://flight" visible="{TransportIndicator}" class="sapUiSmallMarginBegin"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox width="15%" alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<HBox width="10%" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginBegin">
+							<core:Icon src="sap-icon://edit" color="green" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressEdit"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+							<core:Icon src="sap-icon://delete" color="red" size="3rem" class="sapUiTinyMarginTop sapUiLargeMarginEnd" press="onPressDelete"
+								visible="{parts:['','NotEditable'],formatter:'.utility.isDesktop'}"/>
+								<customData>
+									<core:CustomData key="entTypeValue" value="{EntryType}" />
+								</customData>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+					<swipeContent>
+					<CustomListItem type="Active" class="workDayItemBorderBottom" >
+						<HBox>
+							<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://edit" class="sizeSwipeIcon" color="green" press="onPressEditSwipe" >
+										<core:layoutData>
+											<FlexItemData growFactor="1" />
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+								<customData>
+								<core:CustomData key="iconId" value="listWKD7"/>
+								</customData>
+								</VBox>
+							</HBox>
+								<customData>
+								<core:CustomData key="editPath" value=""/>
+								<core:CustomData key="entryType" value="{EntryType}"/>
+							</customData>
+							</HBox>
+						<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMarginTop sapUiTinyMarginBottom sapUiTinyMarginEnd workDayItemBoxShadow swipeHBoxBackGroundColor">
+							<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+								<VBox>
+									<Label text="" class="textColorWDItemMedium"/>
+									<core:Icon src="sap-icon://delete" class="sizeSwipeIcon" color="white" press="onPressDeleteSwipe">
+										<core:layoutData>
+											<FlexItemData growFactor="1"/>
+										</core:layoutData>
+									</core:Icon>
+									<!--<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop"/>-->
+									<HBox class="sapUiSmallMarginTop">
+										<Label text="" class="textColorWDItemMedium"/>
+										<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+									</HBox>
+										<customData>
+								<core:CustomData key="deleteId" value="listWKD7"/>
+								</customData>
+								</VBox>
+							</HBox>
+							<customData>
+								<core:CustomData key="deletePath" value=""/>
+							</customData>
+						</HBox>
+						</HBox>
+					</CustomListItem>
+				</swipeContent>
+			</List>
+			<Panel id="panelSignature" width="auto" class="sapUiResponsiveMargin sapUiSmallMargin" visible="false">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>signature}" class="textColorWDItemLarge"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Image id="imageSignature" src=""/>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="{i18n>signatureBtn}" type="Default" press="onPressSignatureDialog" visible="false"/>
+					<!--<Button id="btnSubmitWeek" text="{i18n>submitWeekBtn}" type="Default" press="onPressSubmitWeek" visible="true"/>-->
+					<!--<Button id="btnSendPdf" text="{i18n>sendPdfbtn}" type="Default" press="onPressSendPDF" visible="false"/>-->
+					<Button text="{i18n>addTimeBtn}" icon="sap-icon://add" type="Emphasized" press="onPressAddTime"/>
+				</contentRight>
+				<contentLeft></contentLeft>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

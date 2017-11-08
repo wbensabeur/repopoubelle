@@ -1,0 +1,98 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.EquipmentEntryCreate" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>addEquipmentTitle}" navButtonPress="onPressNavBack" showNavButton="true" busy="{equipCreateView>/busy}">
+		<content>
+			<Panel width="auto" class="sapUiResponsiveMargin" visible="{equipCreateView>/isFullListDisplay}">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>equipmnetEntry}"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<VBox>
+						<HBox>
+						<ComboBox
+				class="sapUiSmallMarginBegin sapUiSmallMarginBottom sapUiMediumMarginEnd" placeholder="{i18n>selectProject}" selectedKey="{equipCreateView>/projectId}" width="100%">
+				<core:Item key="{ProjectId}" text="{ProjectName}"/>
+				</ComboBox>
+				<Button icon="sap-icon://favorite-list" press="onPressFavorite" type="Transparent" class="sapUiMediumMarginBegin homeBtnSize"/>
+			</HBox>
+			<ComboBox
+				class="sapUiSmallMarginBegin sapUiSmallMarginBottom sapUiMediumMarginEnd" placeholder="{i18n>selectEquipment}" selectedKey="{equipCreateView>/EuipmentId}">
+				<core:Item key="{EuipmentId}" text="{EquipmentName}"/>
+			</ComboBox>
+			
+			<SegmentedButton selectedKey="{EuipmentId>/hrValue}" class="sapUiSmallMarginBegin sapUiSmallMarginBottom">
+						<items>
+							<SegmentedButtonItem text="1" key="1"/>
+							<SegmentedButtonItem text="2" key="2"/>
+							<SegmentedButtonItem text="4" key="4"/>
+							<SegmentedButtonItem text="6" key="6"/>
+							<SegmentedButtonItem text="8" key="8"/>
+							<SegmentedButtonItem text="..." key="0"/>
+						</items>
+					</SegmentedButton>
+					</VBox>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>historic}"/>
+						<ToolbarSpacer />
+				<Button icon="sap-icon://resize" press="onPressResizeList"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<List growing="true" growingScrollToLoad="true">
+				<CustomListItem press="onPressEditTimeDetails" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://shipping-status" type="Transparent" press="onPressTimeCreate"
+								class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<Label text="Project -1 " class="textColorBlue"/>
+								<Label text="8 Unit"/>
+							</VBox>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+				<CustomListItem press="onPressEditTimeDetails" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<Button icon="sap-icon://shipping-status" type="Transparent" press="onPressTimeCreate"
+								class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom homeBtnSize"/>
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<Label text="Project -2 " class="textColorBlue"/>
+								<Label text="16 Unit"/>
+							</VBox>
+						</HBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button type="Default" text="{i18n>equipSendBtn}" press="onPressSend" ariaDescribedBy="defaultButtonDescription">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+					<Button type="Accept" text="{i18n>tcSave}" press="onPressSave">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+					<Button type="Reject" text="{i18n>tcCancel}" press="onPressCancel">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

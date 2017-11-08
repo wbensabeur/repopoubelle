@@ -1,0 +1,30 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.FavoriteProjectList" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>favoriteTitle}" navButtonPress="onPressNavBack" showNavButton="true">
+		<content>
+			<List growing="true" growingScrollToLoad="true">
+				<CustomListItem press="onPressFavoriteProjectList" type="Active">
+					<HBox>
+						<HBox width="100%">
+							<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+								<items>
+								<Label text="Jours" class="textColorBlue"/>
+								<Text text="P.xxx 178.7.16, xxxxxxxxxx Julien(10047), Temps De Travail"/>
+								</items>
+							</VBox>
+						</HBox>
+						<Button icon="sap-icon://favorite" type="Transparent" press="onPressEquipmentEdit"
+							class="sapUiTinyMarginBegin sapUiSmallMarginEnd sapUiSmallMarginTopBottom homeBtnSize"/>
+					</HBox>
+				</CustomListItem>
+			</List>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+				</contentRight>
+				<contentLeft></contentLeft>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<HBox width="100%">
+		<!--<Button text="{i18n>LProjectSelect}" icon="sap-icon://value-help" iconFirst="false"/>-->
+ 		<!--<Label text="{i18n>ifNecessary}" visible="{AddTime>/visibleProjectOptional}" class="sapUiSmallMarginBegin"/>-->
+	</HBox>
+	<HBox width="100%" alignItems="Start" justifyContent="Start" id="selectFragmentPrj">
+		<Label text="{ProjectDescription}" class="sapUiSmallMarginTop" visible="false"/>
+		<Button text="{i18n>selectProject}" type="Emphasized" press="OnProjectSearch" icon="sap-icon://value-help" iconFirst="false"/>
+		<Button text="{i18n>projectRefrsh}" visible="false" press="OnProjectSearch" icon="sap-icon://synchronize"/>
+	</HBox>
+</core:FragmentDefinition>

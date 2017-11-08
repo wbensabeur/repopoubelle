@@ -1,0 +1,215 @@
+<mvc:View controllerName="com.vinci.timesheet.employee.controller.TimeDetails" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core">
+	<Page title="{i18n>hoursDetails}" navButtonPress="onPressNavBack" showNavButton="true" showHeader="true" visible="true"
+		busy="{timesheetview>/busy}" class="nav-color VinciPage">
+		<content>
+			<core:Fragment fragmentName="com.vinci.timesheet.employee.view.EmpWeekDayDetail" type="XML"></core:Fragment>
+			<!--<Panel width="auto" class="sapUiResponsiveMargin workDayItemPanel workDayItemBorderBottom">-->
+			<List id="listWKD1" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom" >
+				<CustomListItem id="columnList1" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+				
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+					
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+						<!--	<HBox alignItems="Start" justifyContent="End">
+								<core:Icon src="sap-icon://delete" color="red" size="1.3rem" class="sapUiTinyMarginTop sapUiSmallMarginEnd" press="onPressDelete" visible="{parts:[''],formatter:'.utility.isDesktop'}"/>
+						</HBox>-->
+					</HBox>
+				</CustomListItem>
+			<!--	<swipeContent>
+				<CustomListItem  type="Active" class="workDayItemBorderBottom" press="onPressDeleteSwipe">
+				
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin" alignContent="Start" justifyContent="Center">
+							<VBox>
+								<Label text="" class="textColorWDItemMedium"/>
+								<Label text="DELETE" class="textColorWDItemMedium sapUiTinyMarginTop" />
+								
+								<HBox class="sapUiSmallMarginTop" >
+									<Label text="" class="textColorWDItemMedium"/>
+									<Label text="" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<customData>
+									<core:CustomData key="deletePath" value=""/>
+								</customData>           
+					</HBox>
+				</CustomListItem>
+				
+					</swipeContent>-->
+			</List>
+			<List id="listWKD2" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom">
+				<CustomListItem id="columnList2" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+									<!--	<core:Icon src="sap-icon://delete" color="red" size="1.3rem" class="sapUiTinyMarginTop" press="OnDeleteEmpDayitem" visible="true"/>-->
+					</HBox>
+				</CustomListItem>
+			</List>
+			<List id="listWKD3" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom">
+				<CustomListItem id="columnList3" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+			<List id="listWKD4" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom">
+				<CustomListItem id="columnList4" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+			<List id="listWKD5" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom">
+				<CustomListItem id="columnList5" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+			<List id="listWKD6" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom">
+				<CustomListItem id="columnList6" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+			<List id="listWKD7" headerText="" visible="false" class="textColorWDItemLarge workDayItemBorderBottom">
+				<CustomListItem id="columnList7" press="onPressEditTimeDetails" type="Inactive" class="workDayItemBorderBottom">
+					<HBox width="{'fragListWidth>/width'}" class="sapUiTinyMargin workDayItemBoxShadow">
+						<HBox width="80%" class="sapUiSmallMargin">
+							<VBox>
+								<Label text="{ProjectName}" class="textColorWDItemMedium"/>
+								<Label text="{ProjectID}" class="textColorWDItemMedium projectIdItalic"/>
+								<HBox class="sapUiSmallMarginTop">
+									<Label text="{EntryTypeDesc}" class="textColorWDItemMedium"/>
+									<Label text="{ parts:['Hours','EntryType'],formatter:'.utility.numberFormatter'}H" class="sapUiSmallMarginBegin textColorWDItemMedium"/>
+								</HBox>
+							</VBox>
+						</HBox>
+						<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+							<VBox class="hourSize sapUiTinyMarginTop sapUiTinyMarginBegin sapUiTinyMarginEnd" height="1rem" width="1rem" alignItems="Center"
+								justifyContent="Center">
+								<customData>
+									<core:CustomData key="status" value="{Status}" writeToDom="true"/>
+								</customData>
+							</VBox>
+						</VBox>
+					</HBox>
+				</CustomListItem>
+			</List>
+			<!--</Panel>-->
+		</content>
+		<footer>
+			<Bar class="vinciFooterBar">
+				<contentRight>
+					<Button text="{i18n>addTimeBtn}" icon="sap-icon://add" type="Emphasized" press="onPressAddTime"/>
+				</contentRight>
+				<contentLeft></contentLeft>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
